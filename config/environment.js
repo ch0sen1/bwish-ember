@@ -3,6 +3,7 @@
 module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'bwish-ember',
+    podModulePrefix: 'bwish-ember/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
