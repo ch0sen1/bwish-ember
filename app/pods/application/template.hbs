@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Welcome to BWish</h2>
 
+{{#if session.isAuthenticated}}
+<button {{action 'invalidateSession'}}>logout</button>
+<!-- {{session.content.secure.token}} -->
 {{outlet}}
+{{else}}
+{{auth-form}}
+{{/if}}
