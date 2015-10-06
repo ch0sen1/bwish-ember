@@ -5,6 +5,7 @@ module.exports = function (environment) {
     modulePrefix: 'bwish-ember',
     podModulePrefix: 'bwish-ember/pods',
     environment: environment,
+    API_URL: process.env.API_URL,
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -18,6 +19,24 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:token'
+  };
+
+  ENV['simple-auth-token'] = {
+    serverTokenEndpoint: `${ENV.API_URL}/auth`,
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    refreshAccessTokens: true,
+    serverTokenRefreshEndpoint: `${ENV.API_URL}/auth`,
+    tokenExpireName: 'exp',
+    refreshLeeway: 300,
+    timeFactor: 1
   };
 
   if (environment === 'development') {
