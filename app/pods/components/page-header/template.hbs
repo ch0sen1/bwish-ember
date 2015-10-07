@@ -1,0 +1,28 @@
+<nav>
+  <div>
+    {{#if session.isAuthenticated}}
+    <span class="bars icon-text"><a {{action 'toggleSideNav'}}>{{fa-icon 'bars' size=1}}</a></span>
+    {{/if}}
+    <span class="logo icon-text">{{fa-icon 'birthday-cake'}} Birthday Wish</span>
+    {{#if session.isAuthenticated}}
+    <div class="primary-text">
+      {{#link-to 'index'}}Home<span></span>{{/link-to}}
+      {{#link-to 'addresses'}}Addresses<span></span>{{/link-to}}
+      {{#link-to 'postcards'}}Postcards<span></span>{{/link-to}}
+      {{drop-nav}}
+    </div>
+    {{/if}}
+  </div>
+</nav>
+{{#if sideNav}}
+<div class="overlay" {{action 'toggleSideNav'}}>
+  <nav class="drawer primary-text">
+    <span class="title">{{fa-icon 'birthday-cake'}} Birthday Wish</span>
+    {{#link-to 'index'}}Home{{/link-to}}
+    {{#link-to 'addresses'}}Addresses{{/link-to}}
+    {{#link-to 'postcards'}}Postcards{{/link-to}}
+    {{#link-to 'settings'}}Settings{{/link-to}}
+    <a class="logout" {{action 'invalidateSession'}}>Logout</a>
+  </nav>
+</div>
+{{/if}}

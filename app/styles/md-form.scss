@@ -1,0 +1,48 @@
+form,
+.md-form {
+  .input-row {
+    display: flex;
+
+    > * { padding: 4px 0; }
+
+    label {
+      flex: none;
+      margin-right: 16px;
+      text-align: right;
+      width: 100px;
+    }
+
+    input {
+      flex: auto;
+      width: 100%;
+    }
+  }
+
+  .text-field {
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    font-size: 16px;
+    margin: 0;
+    margin-right: 16px;
+    text-align: left;
+
+    &:focus {
+      border-bottom: 2px solid $primary-color-1;
+      outline: none;
+    }
+  }
+
+  .buttons {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    > * {
+      display: inline-block;
+      width: auto;
+    }
+
+    .right { float: right; }
+  }
+}
