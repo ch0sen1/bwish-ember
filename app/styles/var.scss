@@ -58,11 +58,7 @@ $accent-color-2: #f50057;
   .divider-text { color: rgba(255, 255, 255, .12); }
 }
 
-.black-text { @extend %black-text; }
-
-.white-text { @extend %white-text; }
-
-.primary-colors-1 {
+%primary-colors-1 {
   @extend %white-text;
 
   background-color: $primary-color-1;
@@ -70,7 +66,7 @@ $accent-color-2: #f50057;
   .accent { color: $accent-color-1; }
 }
 
-.primary-colors-2 {
+%primary-colors-2 {
   @extend %white-text;
 
   background-color: $primary-color-2;
@@ -78,7 +74,7 @@ $accent-color-2: #f50057;
   .accent { color: $accent-color-2; }
 }
 
-.primary-colors-3 {
+%primary-colors-3 {
   @extend %black-text;
 
   background-color: $primary-color-3;
@@ -86,14 +82,28 @@ $accent-color-2: #f50057;
   .accent { color: $accent-color-1; }
 }
 
-.accent-colors-1 {
+%accent-colors-1 {
   @extend %white-text;
 
   background-color: $accent-color-1;
 }
 
-.accent-colors-2 {
+%accent-colors-2 {
   @extend %white-text;
 
   background-color: $accent-color-2;
 }
+
+.black-text { @extend %black-text; }
+
+.white-text { @extend %white-text; }
+
+.primary-colors-1 { @extend %primary-color-1; }
+
+.primary-colors-2 { @extend %primary-color-2; }
+
+.primary-colors-3 { @extend %primary-color-3; }
+
+.accent-colors-1 { @extend %accent-colors-1; }
+
+.accent-colors-2 { @extend %accent-colors-2; }
