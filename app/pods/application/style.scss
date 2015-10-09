@@ -10,6 +10,8 @@ body {
 
 body > .ember-view { height: 100%; }
 
+a { cursor: pointer; }
+
 .wrapper {
   margin: 0 auto -52px;
   min-height: 100%;
