@@ -6,6 +6,9 @@ let Router = Ember.Router.extend({
 });
 
 Router.map(function () {
+  this.route('addresses');
+  this.route('postcards');
+  this.route('settings');
 });
 
 export default Router;

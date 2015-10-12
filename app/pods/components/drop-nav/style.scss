@@ -1,0 +1,24 @@
+.drop-nav {
+  nav {
+    a:first-child { box-shadow: none; }
+
+    a {
+      @extend %white-text;
+      @include box-shadow(0, 5px, 10px, rgba(0, 0, 0, .15));
+
+      background: $primary-color-1;
+      display: block;
+
+      &:hover { background-color: $accent-color-1; }
+    }
+
+    &:hover {
+      > a:first-child { background-color: $accent-color-1; }
+    }
+  }
+
+  .hide {
+    position: absolute;
+    right: 0;
+  }
+}

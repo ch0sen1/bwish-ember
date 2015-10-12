@@ -1,0 +1,11 @@
+<div class="drop-nav">
+  <nav class="primary-text">
+    <a>{{fa-icon 'gear' size=1}}</a>
+    {{#if nav}}
+    <div class="hide">
+      {{#link-to 'settings'}}Settings{{/link-to}}
+      <a {{action 'invalidateSession'}}>Logout</a>
+    </div>
+    {{/if}}
+  </nav>
+</div>

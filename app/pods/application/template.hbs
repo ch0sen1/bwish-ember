@@ -2,7 +2,6 @@
   {{page-header class='header'}}
   <div class="main">
     {{#if session.isAuthenticated}}
-    <button {{action 'invalidateSession'}}>logout</button>
     {{session.content.secure.token}}
     {{outlet}}
     {{else}}
