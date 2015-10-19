@@ -1,0 +1,49 @@
+$grey: #e8e8e8;
+$dark-grey: #d5d5d5;
+
+button,
+.md-button {
+  @extend %black-text;
+
+  background: 0 0;
+  border: 0;
+  border-radius: 2px;
+  color: $primary-color-1;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 36px;
+  letter-spacing: 0;
+  line-height: 36px;
+  min-width: 64px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  &:hover { background: $grey; }
+  &:active { background: $dark-grey; }
+  &:focus { outline: none; }
+
+  &.raised {
+    @extend %primary-colors-1;
+    @include box-shadow(0, 5px, 10px, rgba(0, 0, 0, .15));
+
+    &:active {
+      background: $primary-color-2;
+
+      box-shadow: none;
+    }
+
+    &:hover {
+      @include box-shadow(0, 5px, 10px, rgba(0, 0, 0, .25));
+
+      background: $primary-color-1;
+    }
+  }
+}

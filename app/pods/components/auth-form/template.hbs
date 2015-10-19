@@ -1,8 +1,32 @@
-<form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Email</label>
-  {{input id='identification' placeholder='email' value=identification}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='password' type='password' value=password}}
-  <button type="submit">Login</button>
+{{#paper-card title=formType}}
+<form {{action 'authenticate' on='submit'}}  class="auth-form">
+  <div class="input-row">
+    <label for="identification">Email</label>
+    {{input id='identification' placeholder='Email' value=identification class='text-field'}}
+  </div>
+  <br>
+  <div class="input-row">
+    <label for="password">Password</label>
+    {{input id='password' placeholder='Password' type='password' value=password class='text-field'}}
+  </div>
+  <br>
+  <div class="buttons">
+    <div class="right">
+      {{#if login}}
+      <button type="submit" class="raised">Login</button>
+      {{else}}
+      <button {{action 'register'}} class="raised">Register</button>
+      {{/if}}
+    </div>
+    <div class="left">
+      <button {{action 'switch'}}>
+        {{#if login}}
+        Register
+        {{else}}
+        Login
+        {{/if}}
+      </button>
+    </div>
+  </div>
 </form>
-<button {{action 'register'}}>Register</button>
+{{/paper-card}}
